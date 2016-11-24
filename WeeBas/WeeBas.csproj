@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A32B5F2B-C1F4-4B96-A3C0-1F69D1BE7B99}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WeeBas</RootNamespace>
+    <AssemblyName>WeeBas</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="guess.bas">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Grammar\Digit.cs" />
+    <Compile Include="EntryClass.cs" />
+    <Compile Include="Grammar\Clear.cs" />
+    <Compile Include="Grammar\End.cs" />
+    <Compile Include="Grammar\Expr.cs" />
+    <Compile Include="Grammar\ExprCont.cs" />
+    <Compile Include="Grammar\ExprList.cs" />
+    <Compile Include="Grammar\ExprListItem.cs" />
+    <Compile Include="Grammar\Factor.cs" />
+    <Compile Include="Grammar\Gosub.cs" />
+    <Compile Include="Grammar\Goto.cs" />
+    <Compile Include="Grammar\Load.cs" />
+    <Compile Include="Grammar\Rem.cs" />
+    <Compile Include="Grammar\Rnd.cs" />
+    <Compile Include="Grammar\Save.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="Grammar\If.cs" />
+    <Compile Include="Grammar\InputCmd.cs" />
+    <Compile Include="Grammar\Let.cs" />
+    <Compile Include="Grammar\Line.cs" />
+    <Compile Include="Grammar\ListCmd.cs" />
+    <Compile Include="Grammar\Number.cs" />
+    <Compile Include="Grammar\Print.cs" />
+    <Compile Include="Grammar\Relop.cs" />
+    <Compile Include="Grammar\Return.cs" />
+    <Compile Include="Grammar\Run.cs" />
+    <Compile Include="Grammar\Statement.cs" />
+    <Compile Include="Grammar\Str.cs" />
+    <Compile Include="Grammar\Term.cs" />
+    <Compile Include="Grammar\TermCont.cs" />
+    <Compile Include="Grammar\Var.cs" />
+    <Compile Include="Grammar\VarList.cs" />
+    <Compile Include="Input.cs" />
+    <Compile Include="InputHelp.cs" />
+    <Compile Include="Ops.cs" />
+    <Compile Include="MessageFormatter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hello.bas">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
